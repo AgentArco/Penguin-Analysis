@@ -11,10 +11,12 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-### Five Number Summaries for Flipper Length and Bill Length
+### Five Number Summaries for Flipper Length and Bill Length for Adelie Penguins
 
 ```{r}
-fivenum(penguins$flipper_length_mm)
-fivenum(penguins$bill_length_mm)
-```
+adelie_penguins = penguins |>
+  filter(species == 'Adelie')
 
+fivenum(adelie_penguins$flipper_length_mm)
+fivenum(adelie_penguins$bill_length_mm)
+```
