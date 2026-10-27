@@ -20,3 +20,19 @@ adelie_penguins = penguins |>
 fivenum(adelie_penguins$flipper_length_mm)
 fivenum(adelie_penguins$bill_length_mm)
 ```
+
+### Find Relationship Between Flipper and Bill Length for Adelie Penguins
+
+```{r}
+penguins |>
+  filter(species == 'Adelie') |>
+  ggplot(aes(x = bill_length_mm, y = flipper_length_mm, size = body_mass_g, color = sex)) +
+  geom_point() +
+  labs(title = 'Flipper Length vs Bill Length for Adelie Penguins',
+       x = 'Bill Length (mm)',
+       y = 'Flipper Length (mm)',
+       size = 'Body Mass (g)',
+       color = 'Sex',
+      )
+  theme_classic()
+```
